@@ -1,1 +1,19 @@
 @import '~bootstrap/scss/bootstrap';
+
+.auth-section-div {
+  display: flex;
+  justify-content: center;
+  background-color: $indigo;
+}
+
+.scrollspy {
+  display: flex;
+  justify-content: center;
+  background-color: $indigo;
+}
+
+.create-post-div {
+  display: flex;
+  justify-content: center;
+  background-color: $indigo;
+}

@@ -1,5 +1,8 @@
 const store = require('./../store')
 
+$('.create-post-div').hide()
+$('#sign-out-button').hide()
+
 const signUpSuccess = function (response) {
   $('#user-message').text('Sign Up Successful!!!')
 }
@@ -11,6 +14,9 @@ const signUpFailure = function (response) {
 const signInSuccess = function (response) {
   store.user = response.user
   $('#user-message').text('Sign in successful')
+  $('#auth-section').hide()
+  $('.create-post-div').show()
+  $('#sign-out-button').show()
 }
 
 const signInFailure = function (response) {
@@ -20,6 +26,9 @@ const signInFailure = function (response) {
 const signOutSuccess = function (response) {
   store.user = null
   $('#user-message').text('sign out successful')
+  $('#auth-section').show()
+  $('.create-post-div').hide()
+  $('#sign-out-button').hide()
 }
 
 const signOutFailure = function (response) {

@@ -12,11 +12,14 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>Dream Log</h1>
 
+      <div id="user-message"></div>
+
+      <div class="auth-section-div container">
       <section id="auth-section">
 
-        <div id="user-message"></div>
+
 
         <form id='sign-in'>
           <h3 id='sign-in-header'> SIGN IN</h3>
@@ -56,13 +59,65 @@
             <br>
             <button>Change Password</button><button id='exit-account-settings' type='button'>Back</button>
           </form>
-
-            <div id='sign-out-button'>
-              <button id='sign-out'>Sign Out</button>
-            </div>
-
-
         </section>
+      </div>
+
+      <div id='sign-out-button'>
+        <button id='sign-out'>Sign Out</button>
+      </div>
+
+      <h2>Get All Dreams</h2>
+          <button id='dreams-index'>Get All Books</button>
+          <hr>
+
+          <div id='dreams-display'></div>
+
+
+        <!-- <div class='scrollspy container'>
+            <nav id="navbar-example2" class="navbar navbar-light bg-light px-3">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link" href="#fat">@fat</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#mdo">@mdo</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#one">one</a></li>
+              <li><a class="dropdown-item" href="#two">two</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#three">three</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" tabindex="0">
+        <h4 id="fat">@fat</h4>
+        <p>...</p>
+        <h4 id="mdo">@mdo</h4>
+        <p>...</p>
+        <h4 id="one">one</h4>
+        <p>...</p>
+        <h4 id="two">two</h4>
+        <p>...</p>
+        <h4 id="three">three</h4>
+        <p>...</p>
+      </div>
+    </div> -->
+
+<div class='create-post-div'>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Email address</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Dream Title">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+</div>
 
     </body>
 </html>
