@@ -13,5 +13,52 @@
     </head>
     <body>
       <h1>Browser Template</h1>
+
+      <section id="auth-section">
+
+        <div id="user-message"></div>
+
+        <form id='sign-in'>
+          <h3 id='sign-in-header'> SIGN IN</h3>
+          <br>
+          <input type='email' name='credentials[email]' placeholder='Enter Email Here' required>
+          <br>
+          <input type='password' name='credentials[password]' placeholder='Enter Password Here' required>
+          <br>
+          <button>Sign In</button>
+        </form>
+
+
+        <div id='create-account'>
+          <button>Create Account</button>
+        </div>
+
+        <form id='sign-up'>
+          <h3 id='sign-up-header'> SIGN UP</h3>
+          <br>
+          <input type='email' name='credentials[email]' placeholder='Enter Email Here' required>
+          <br>
+          <input type='password' name='credentials[password]' placeholder='Enter Password Here' required>
+          <br>
+          <input type='password' name='credentials[password_confirmation]' placeholder='Enter Password Again' required>
+          <br>
+          <div>
+          <button> Sign Up </button> <button id='exit-sign-up' type='button'>Back</button>
+          </div>
+        </form>
+
+          <form id='change-password'>
+            <h3 id='change-password-header'> CHANGE PASSWORD </h3>
+            <br>
+            <input type='password' name='passwords[old]' placeholder='Enter Old Password' required>
+            <br>
+            <input type='password' name='passwords[new]' placeholder='Enter New Password' required>
+            <br>
+            <button>Change Password</button><button id='exit-account-settings' type='button'>Back</button>
+          </form>
+
+
+        </section>
+
     </body>
 </html>
