@@ -66,11 +66,12 @@
         <button id='sign-out'>Sign Out</button>
       </div>
 
-      <h2>Get All Dreams</h2>
+        <section class='dreams-posts'>
+          <h2>Get All Dreams</h2>
           <button id='dreams-index'>Get All Books</button>
           <hr>
-
           <div id='dreams-display'></div>
+        </section>
 
 
         <!-- <div class='scrollspy container'>
@@ -109,14 +110,17 @@
     </div> -->
 
 <div class='create-post-div'>
+  <form id='create-post'>
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">Email address</label>
-      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Dream Title">
+      <input type="text" name=dream[title] class="form-control" id="exampleFormControlInput1" placeholder="Dream Title">
     </div>
     <div class="mb-3">
       <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      <textarea type="text" name=dream[description] class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      <button> Log Dream </button>
     </div>
+  </form>
 </div>
 
     </body>

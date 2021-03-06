@@ -13,7 +13,7 @@ $(() => {
 
   $('#sign-out').on('click', authEvents.onSignOut)
 
-  $('#post-button').on('submit', dreamEvents.onCreate)
+  $('#create-post').on('submit', dreamEvents.onCreateDream)
 
   $('#dreams-index').on('click', dreamEvents.onIndexDreams)
 })

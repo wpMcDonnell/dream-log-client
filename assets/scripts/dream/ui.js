@@ -30,8 +30,21 @@ const onIndexSuccess = function (responseData) {
   $('#form').trigger('reset')
 }
 
+const onError = function (err) {
+  console.error(err)
+  // if an error occurs show it on page
+  // selects
+  $('#error-message').html('Something went wrong, please try again')
+}
+
+const onCreateSuccess = function () {
+  $('#user-message').html('You have successfully created a book!, Books have changed! Click Get All Books to see new books.')
+}
+
 module.exports = {
-  onIndexSuccess
+  onIndexSuccess,
+  onError,
+  onCreateSuccess
 }
 
 // const onShowSuccess = function (responseData) {

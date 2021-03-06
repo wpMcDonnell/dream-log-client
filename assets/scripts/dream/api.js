@@ -45,13 +45,13 @@ const updateBook = function (id, formData) {
   })
 }
 
-const createBook = function (formData) {
+const createDream = function (formData) {
   return $.ajax({
     method: 'POST',
     headers: {
       Authorization: `Bearer ${store.user.token}`
     },
-    url: config.apiUrl + '/books/',
+    url: config.apiUrl + '/dreams/',
     //  send form data when making our update request
     data: formData
 
@@ -64,5 +64,5 @@ module.exports = {
   show,
   removeBook,
   updateBook,
-  createBook
+  createDream
 }

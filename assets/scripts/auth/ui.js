@@ -2,6 +2,8 @@ const store = require('./../store')
 
 $('.create-post-div').hide()
 $('#sign-out-button').hide()
+// $('#dreams-index').hide()
+$('.dreams-posts').hide()
 
 const signUpSuccess = function (response) {
   $('#user-message').text('Sign Up Successful!!!')
@@ -17,6 +19,7 @@ const signInSuccess = function (response) {
   $('#auth-section').hide()
   $('.create-post-div').show()
   $('#sign-out-button').show()
+  $('.dreams-posts').show()
 }
 
 const signInFailure = function (response) {
@@ -29,6 +32,7 @@ const signOutSuccess = function (response) {
   $('#auth-section').show()
   $('.create-post-div').hide()
   $('#sign-out-button').hide()
+  $('.dreams-posts').hide()
 }
 
 const signOutFailure = function (response) {
