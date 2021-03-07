@@ -16,4 +16,10 @@ $(() => {
   $('#create-post').on('submit', dreamEvents.onCreateDream)
 
   $('#dreams-index').on('click', dreamEvents.onIndexDreams)
+
+  $('#dreams-display').on('submit', '.dream-update-dynamic', dreamEvents.onDynamicUpdateDream)
+
+  $('#dreams-display').on('click', '.dream-destroy-dynamic', dreamEvents.onDynamicDestroyDream)
+
+  $('#dream-get').on('submit', dreamEvents.onShowDream)
 })

@@ -1,27 +1,24 @@
 
 const onIndexSuccess = function (responseData) {
-// extracting the book from the response's data into a variable
+// extracting the dream from the response's data into a variable
   const dreams = responseData.dreams
 
   console.log(dreams)
 
-  //  creating a string that will store the HTML for all the Books
-  //  we want to show on the screen
-
   let dreamsHtml = ''
 
-  // loop over each book in the books array
+  // loop over each dream in the dreams array
   dreams.forEach(dream => {
     dreamsHtml += `
     <h4>Title: ${dream.title}</h4>
-    <p>Author: ${dream.description}</p>
+    <p>Description: ${dream.description}</p>
     <p>ID: ${dream._id}</p>
     <button class='dream-destroy-dynamic' data-id=${dream._id}>
       Destroy Dream
     </button>
     <form class='dream-update-dynamic' data-id=${dream._id}>
     <input type='text' name='dream[title]' placeholder='Enter Title Here' required>
-    <input type='text' name='book[description]' placeholder='Enter Description Here' required>
+    <input type='text' name='dream[description]' placeholder='Enter Description Here' required>
     <button>Update Dream</button>
     </form>
     `
@@ -38,13 +35,49 @@ const onError = function (err) {
 }
 
 const onCreateSuccess = function () {
-  $('#user-message').html('You have successfully created a book!, Books have changed! Click Get All Books to see new books.')
+  $('#user-message').html('You have successfully created a dream!, dreams have changed! Click Get All dreams to see new dreams.')
+}
+
+const onUpdateSuccess = function () {
+  $('#user-message').html('You have successfully updated a dream!')
+  $('#dreams-display').html('Dreams have changed! Click Get All Dreams to see new dream.')
+  $('#form').trigger('reset')
+
+  setTimeout(() => {
+    $('#user-message').html('')
+  }, 5000)
+}
+
+const onShowDeletedDream = function () {
+  $('#dreams-display').html('Dream was deleted')
+  $('#form').trigger('reset')
+
+  setTimeout(() => {
+    $('#dreams-display').html('')
+  }, 5000)
+}
+
+const onShowSuccess = function (responseData) {
+  const dream = responseData.dream
+  console.log(responseData)
+
+  const dreamsHtml = `
+  <h4>Title: ${dream.title}</h4>
+  <p>Description: ${dream.description}</p>
+  <p>ID: ${dream._id}</p>
+  `
+
+  $('#dreams-display').html(dreamsHtml)
+  $('#form').trigger('reset')
 }
 
 module.exports = {
   onIndexSuccess,
   onError,
-  onCreateSuccess
+  onCreateSuccess,
+  onUpdateSuccess,
+  onShowDeletedDream,
+  onShowSuccess
 }
 
 // const onShowSuccess = function (responseData) {

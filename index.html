@@ -68,7 +68,7 @@
 
         <section class='dreams-posts'>
           <h2>Get All Dreams</h2>
-          <button id='dreams-index'>Get All Books</button>
+          <button id='dreams-index'>Get All Dreams</button>
           <hr>
           <div id='dreams-display'></div>
         </section>
@@ -122,6 +122,22 @@
     </div>
   </form>
 </div>
+
+<form id='dream-get'>
+  <h3 id='get-dream-header'> Get by ID</h3>
+  <br>
+  <input type='text' name='dream[id]' placeholder='Enter id here' required>
+  <br>
+  <button>Get</button>
+</form>
+<br>
+<form id='dream-destroy'>
+  <h3 id='destroy-dream-header'> Destroy Dream by ID</h3>
+  <br>
+  <input type='text' name='dream[id]' placeholder='Enter id here' required>
+  <br>
+  <button>Destroy</button>
+</form>
 
     </body>
 </html>

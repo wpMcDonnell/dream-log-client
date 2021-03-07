@@ -22,7 +22,8 @@ const show = function (id) {
   })
 }
 
-const removeBook = function (id) {
+const removeDream = function (id) {
+  console.log(id)
   return $.ajax({
     method: 'DELETE',
     headers: {
@@ -32,15 +33,15 @@ const removeBook = function (id) {
   })
 }
 
-//  update a single book, using formData, by its id
-const updateBook = function (id, formData) {
+//  update a single dream, using formData, by its id
+const updateDream = function (id, formData) {
+  console.log(formData)
   return $.ajax({
     method: 'PATCH',
     headers: {
       Authorization: `Bearer ${store.user.token}`
     },
     url: config.apiUrl + '/dreams/' + id,
-    //  send form data when making our update request
     data: formData
   })
 }
@@ -62,7 +63,7 @@ const createDream = function (formData) {
 module.exports = {
   index,
   show,
-  removeBook,
-  updateBook,
+  removeDream,
+  updateDream,
   createDream
 }
