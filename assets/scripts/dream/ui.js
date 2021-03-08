@@ -13,6 +13,8 @@ const onIndexSuccess = function (responseData) {
     <h4>Title: ${dream.title}</h4>
     <p>Description: ${dream.description}</p>
     <p>ID: ${dream._id}</p>
+    <p>User: ${dream.owner}</p>
+    <p>entry: ${dream.updatedAt}</p>
     <button class='dream-destroy-dynamic' data-id=${dream._id}>
       Destroy Dream
     </button>
@@ -25,6 +27,8 @@ const onIndexSuccess = function (responseData) {
   })
   $('#dreams-display').html(dreamsHtml)
   $('#form').trigger('reset')
+  $('#exampleFormControlInput1').val('')
+  $('#exampleFormControlTextarea1').val('')
 }
 
 const onError = function (err) {
@@ -32,16 +36,21 @@ const onError = function (err) {
   // if an error occurs show it on page
   // selects
   $('#error-message').html('Something went wrong, please try again')
+  $('#form').trigger('reset')
 }
 
 const onCreateSuccess = function () {
   $('#user-message').html('You have successfully created a dream!, dreams have changed! Click Get All dreams to see new dreams.')
+  $('#form').trigger('reset')
+  $('#exampleFormControlInput1').val('')
+  $('#exampleFormControlTextarea1').val('')
+  $('#change-password').trigger('reset')
 }
 
 const onUpdateSuccess = function () {
   $('#user-message').html('You have successfully updated a dream!')
   $('#dreams-display').html('Dreams have changed! Click Get All Dreams to see new dream.')
-  $('#form').trigger('reset')
+  $('#change-password').trigger('reset')
 
   setTimeout(() => {
     $('#user-message').html('')
@@ -50,7 +59,7 @@ const onUpdateSuccess = function () {
 
 const onShowDeletedDream = function () {
   $('#dreams-display').html('Dream was deleted')
-  $('#form').trigger('reset')
+  $('#change-password').trigger('reset')
 
   setTimeout(() => {
     $('#dreams-display').html('')
@@ -68,7 +77,7 @@ const onShowSuccess = function (responseData) {
   `
 
   $('#dreams-display').html(dreamsHtml)
-  $('#form').trigger('reset')
+  $('#change-password').trigger('reset')
 }
 
 module.exports = {

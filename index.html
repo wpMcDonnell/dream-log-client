@@ -37,6 +37,7 @@
         </div>
 
         <form id='sign-up'>
+
           <h3 id='sign-up-header'> SIGN UP</h3>
           <br>
           <input type='email' name='credentials[email]' placeholder='Enter Email Here' required>
@@ -45,22 +46,18 @@
           <br>
           <input type='password' name='credentials[password_confirmation]' placeholder='Enter Password Again' required>
           <br>
+
           <div>
           <button> Sign Up </button> <button id='exit-sign-up' type='button'>Back</button>
           </div>
+
         </form>
 
-          <form id='change-password'>
-            <h3 id='change-password-header'> CHANGE PASSWORD </h3>
-            <br>
-            <input type='password' name='passwords[old]' placeholder='Enter Old Password' required>
-            <br>
-            <input type='password' name='passwords[new]' placeholder='Enter New Password' required>
-            <br>
-            <button>Change Password</button><button id='exit-account-settings' type='button'>Back</button>
-          </form>
+
         </section>
       </div>
+
+
 
       <div id='sign-out-button'>
         <button id='sign-out'>Sign Out</button>
@@ -72,6 +69,8 @@
           <hr>
           <div id='dreams-display'></div>
         </section>
+
+
 
 
         <!-- <div class='scrollspy container'>
@@ -112,11 +111,11 @@
 <div class='create-post-div'>
   <form id='create-post'>
     <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label">Email address</label>
+      <label for="exampleFormControlInput1" class="form-label">DREAM TITLE</label>
       <input type="text" name=dream[title] class="form-control" id="exampleFormControlInput1" placeholder="Dream Title">
     </div>
     <div class="mb-3">
-      <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+      <label for="exampleFormControlTextarea1" class="form-label">DESCRIPTION</label>
       <textarea type="text" name=dream[description] class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
       <button> Log Dream </button>
     </div>
@@ -130,13 +129,27 @@
   <br>
   <button>Get</button>
 </form>
+
 <br>
+
 <form id='dream-destroy'>
   <h3 id='destroy-dream-header'> Destroy Dream by ID</h3>
   <br>
   <input type='text' name='dream[id]' placeholder='Enter id here' required>
   <br>
   <button>Destroy</button>
+</form>
+
+<br>
+
+<form id='change-password'>
+  <h3 id='change-password-header'> CHANGE PASSWORD </h3>
+  <br>
+  <input type='password' name='passwords[old]' placeholder='Enter Old Password' required>
+  <br>
+  <input type='password' name='passwords[new]' placeholder='Enter New Password' required>
+  <br>
+  <button>Change Password</button><button id='exit-account-settings' type='button'>Back</button>
 </form>
 
     </body>
