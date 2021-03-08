@@ -7,6 +7,9 @@ $('.dreams-posts').hide()
 $('#dream-destroy').hide()
 $('#dream-get').hide()
 $('#change-password').hide()
+$('#sign-up').hide()
+$('.create-post-button').hide()
+
 
 const signUpSuccess = function (response) {
   $('#user-message').text('Sign Up Successful!!!')
@@ -23,7 +26,6 @@ const signUpFailure = function (response) {
 const signInSuccess = function (response) {
   store.user = response.user
   $('#user-message').text('Sign in successful')
-  $('#auth-section').hide()
   $('.create-post-div').show()
   $('#sign-out-button').show()
   $('.dreams-posts').show()
@@ -31,6 +33,12 @@ const signInSuccess = function (response) {
   $('#dream-get').show()
   $('#sign-in').trigger('reset')
   $('#change-password').show()
+  $('#sign-in').hide()
+  $('#create-account').hide()
+  setTimeout(() => {
+    $('#user-message').html('')
+  }, 5000)
+  $('.create-post-button').show()
 }
 
 const signInFailure = function (response) {
@@ -41,7 +49,8 @@ const signInFailure = function (response) {
 const signOutSuccess = function (response) {
   store.user = null
   $('#user-message').text('sign out successful')
-  $('#auth-section').show()
+  $('#sign-in').show()
+  $('#create-account').show()
   $('.create-post-div').hide()
   $('#sign-out-button').hide()
   $('.dreams-posts').hide()
@@ -50,6 +59,8 @@ const signOutSuccess = function (response) {
   $('#sign-up').trigger('reset')
   $('#dreams-display').html('')
   $('#change-password').trigger('reset')
+  $('#change-password').hide()
+  $('.create-post-button').hide()
 }
 
 const signOutFailure = function (response) {
@@ -70,6 +81,23 @@ const changePasswordFailure = function () {
   $('#change-password').trigger('reset')
 }
 
+const onCreateAccount = function () {
+  $('#sign-in').hide()
+  $('#sign-up').show()
+  $('#create-account').hide()
+  $('#user-message').html('')
+  $('#sign-in').trigger('reset')
+}
+
+const onExitSignUp = function () {
+  $('#sign-in').show()
+  $('#sign-up').hide()
+  $('#create-account').show()
+  $('#user-message').html('')
+  $('#sign-in').trigger('reset')
+  $('#sign-up').trigger('reset')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -78,5 +106,7 @@ module.exports = {
   signOutSuccess,
   signOutFailure,
   changePasswordSuccess,
-  changePasswordFailure
+  changePasswordFailure,
+  onCreateAccount,
+  onExitSignUp
 }

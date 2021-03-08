@@ -1,79 +1,105 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1>Dream Log</h1>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-      <div id="user-message"></div>
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
 
-      <div class="auth-section-div container">
-      <section id="auth-section">
+<body>
 
 
 
+
+
+
+
+
+
+      <div class='title-container'>
+        <h1>Dream Log</h1>
+      </div>
+
+      <div class='sign-in-container'>
         <form id='sign-in'>
-          <h3 id='sign-in-header'> SIGN IN</h3>
-          <br>
-          <input type='email' name='credentials[email]' placeholder='Enter Email Here' required>
-          <br>
-          <input type='password' name='credentials[password]' placeholder='Enter Password Here' required>
-          <br>
-          <button>Sign In</button>
-        </form>
-
-
-        <div id='create-account'>
-          <button>Create Account</button>
+          <h5 id='sign-in-header'> SIGN IN</h5>
+          <div id='account-icon'>
+          <img  src="public/accountCircle.png" alt="Sign In">
         </div>
-
-        <form id='sign-up'>
-
-          <h3 id='sign-up-header'> SIGN UP</h3>
-          <br>
           <input type='email' name='credentials[email]' placeholder='Enter Email Here' required>
           <br>
           <input type='password' name='credentials[password]' placeholder='Enter Password Here' required>
           <br>
-          <input type='password' name='credentials[password_confirmation]' placeholder='Enter Password Again' required>
-          <br>
 
-          <div>
-          <button> Sign Up </button> <button id='exit-sign-up' type='button'>Back</button>
+          <div id='sign-in-button'>
+            <button>Sign In</button>
           </div>
-
         </form>
 
-
-        </section>
       </div>
 
 
 
-      <div id='sign-out-button'>
-        <button id='sign-out'>Sign Out</button>
+
+
+
+      <div id='create-account'>
+        <button>Create Account</button>
       </div>
 
-        <section class='dreams-posts'>
-          <h2>Get All Dreams</h2>
-          <button id='dreams-index'>Get All Dreams</button>
-          <hr>
-          <div id='dreams-display'></div>
-        </section>
+    <div class='sign-up-container'>
+    <form id='sign-up'>
+
+      <h5 id='sign-up-header'> SIGN UP</h5>
+      <br>
+      <input type='email' name='credentials[email]' placeholder='Enter Email Here' required>
+      <br>
+      <input type='password' name='credentials[password]' placeholder='Enter Password Here' required>
+      <br>
+      <input type='password' name='credentials[password_confirmation]' placeholder='Enter Password Again' required>
+      <br>
+
+
+      <div id=sign-up-buttons>
+        <button> Sign Up </button> <button id='exit-sign-up' type='button'>Back</button>
+      </div>
+
+    </form>
+  </div>
+
+  <div id="user-message"></div>
 
 
 
 
-        <!-- <div class='scrollspy container'>
+
+
+
+  <div id='sign-out-button'>
+    <button id='sign-out'>Sign Out</button>
+  </div>
+
+  <section class='dreams-posts'>
+    <button id='dreams-index'>Get All Dreams</button>
+    <hr>
+    <div id='dreams-display'></div>
+  </section>
+
+  <div class='create-post-button'>
+    <img src='public/create_post.png' alt='Create Post'>
+  </div>
+
+
+
+
+  <!-- <div class='scrollspy container'>
             <nav id="navbar-example2" class="navbar navbar-light bg-light px-3">
         <a class="navbar-brand" href="#">Navbar</a>
         <ul class="nav nav-pills">
@@ -108,49 +134,50 @@
       </div>
     </div> -->
 
-<div class='create-post-div'>
-  <form id='create-post'>
-    <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label">DREAM TITLE</label>
-      <input type="text" name=dream[title] class="form-control" id="exampleFormControlInput1" placeholder="Dream Title">
-    </div>
-    <div class="mb-3">
-      <label for="exampleFormControlTextarea1" class="form-label">DESCRIPTION</label>
-      <textarea type="text" name=dream[description] class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-      <button> Log Dream </button>
-    </div>
+  <div class='create-post-div'>
+    <form id='create-post'>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">DREAM TITLE</label>
+        <input type="text" name=dream[title] class="form-control" id="exampleFormControlInput1" placeholder="Dream Title">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">DESCRIPTION</label>
+        <textarea type="text" name=dream[description] class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <button> Log Dream </button>
+      </div>
+    </form>
+  </div>
+
+  <form id='dream-get'>
+    <h3 id='get-dream-header'> Get by ID</h3>
+    <br>
+    <input type='text' name='dream[id]' placeholder='Enter id here' required>
+    <br>
+    <button>Get</button>
   </form>
-</div>
 
-<form id='dream-get'>
-  <h3 id='get-dream-header'> Get by ID</h3>
   <br>
-  <input type='text' name='dream[id]' placeholder='Enter id here' required>
-  <br>
-  <button>Get</button>
-</form>
 
-<br>
+  <form id='dream-destroy'>
+    <h3 id='destroy-dream-header'> Destroy Dream by ID</h3>
+    <br>
+    <input type='text' name='dream[id]' placeholder='Enter id here' required>
+    <br>
+    <button>Destroy</button>
+  </form>
 
-<form id='dream-destroy'>
-  <h3 id='destroy-dream-header'> Destroy Dream by ID</h3>
   <br>
-  <input type='text' name='dream[id]' placeholder='Enter id here' required>
-  <br>
-  <button>Destroy</button>
-</form>
 
-<br>
+  <form id='change-password'>
+    <h3 id='change-password-header'> CHANGE PASSWORD </h3>
+    <br>
+    <input type='password' name='passwords[old]' placeholder='Enter Old Password' required>
+    <br>
+    <input type='password' name='passwords[new]' placeholder='Enter New Password' required>
+    <br>
+    <button>Change Password</button><button id='exit-account-settings' type='button'>Back</button>
+  </form>
 
-<form id='change-password'>
-  <h3 id='change-password-header'> CHANGE PASSWORD </h3>
-  <br>
-  <input type='password' name='passwords[old]' placeholder='Enter Old Password' required>
-  <br>
-  <input type='password' name='passwords[new]' placeholder='Enter New Password' required>
-  <br>
-  <button>Change Password</button><button id='exit-account-settings' type='button'>Back</button>
-</form>
+</body>
 
-    </body>
 </html>

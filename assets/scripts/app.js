@@ -4,6 +4,8 @@ const authEvents = require('./auth/events')
 
 const dreamEvents = require('./dream/events')
 
+const authUi = require('./auth/ui')
+
 $(() => {
   $('#sign-up').on('submit', authEvents.onSignUp)
 
@@ -22,4 +24,8 @@ $(() => {
   $('#dreams-display').on('click', '.dream-destroy-dynamic', dreamEvents.onDynamicDestroyDream)
 
   $('#dream-get').on('submit', dreamEvents.onShowDream)
+
+  $('#create-account').on('click', authUi.onCreateAccount)
+
+  $('#exit-sign-up').on('click', authUi.onExitSignUp)
 })
