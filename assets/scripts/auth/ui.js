@@ -27,12 +27,9 @@ const signUpFailure = function (response) {
 const signInSuccess = function (response) {
   store.user = response.user
   $('#user-message').text('Sign in successful')
-  // $('#sign-out-button').show()
   $('.dreams-posts').show()
-  // $('#dream-destroy').show()
-  // $('#dream-get').show()
+  $('#dreams-index').show()
   $('#sign-in').trigger('reset')
-  // $('#change-password').show()
   $('#sign-in').hide()
   $('#create-account').hide()
   setTimeout(() => {
@@ -40,7 +37,7 @@ const signInSuccess = function (response) {
   }, 5000)
   $('.create-post-button').show()
   $('.nav').show()
-  // $('.title-container').hide()
+  $('.bi-search').show()
 }
 
 const signInFailure = function (response) {

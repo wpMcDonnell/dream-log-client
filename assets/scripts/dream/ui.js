@@ -10,6 +10,7 @@ const onIndexSuccess = function (responseData) {
   // loop over each dream in the dreams array
   dreams.forEach(dream => {
     dreamsHtml += `
+    <hr>
     <h4>Title: ${dream.title}</h4>
     <p>Description: ${dream.description}</p>
     <p>ID: ${dream._id}</p>
@@ -18,6 +19,9 @@ const onIndexSuccess = function (responseData) {
     <button class='dream-destroy-dynamic' data-id=${dream._id}>
       Destroy Dream
     </button>
+    <br>
+    <br>
+    <p> Enter Edits Below ... <p>
     <form class='dream-update-dynamic' data-id=${dream._id}>
     <input type='text' name='dream[title]' placeholder='Enter Title Here' required>
     <input type='text' name='dream[description]' placeholder='Enter Description Here' required>
@@ -55,10 +59,11 @@ const onCreateSuccess = function () {
     $('#user-message').html('')
   }, 5000)
   $('.create-post-button').show()
-
 }
 
 const onUpdateSuccess = function () {
+  $('.dreams-posts').show()
+  $('#dreams-index').show()
   $('#user-message').html('You have successfully updated a dream!')
   $('#dreams-display').html('Dreams have changed! Click Get All Dreams to see new dream.')
   $('#change-password').trigger('reset')
@@ -69,11 +74,13 @@ const onUpdateSuccess = function () {
 }
 
 const onShowDeletedDream = function () {
+  $('.dreams-posts').show()
   $('#dreams-display').html('Dream was deleted')
+  $('#dreams-index').show()
   $('#change-password').trigger('reset')
 
   setTimeout(() => {
-    $('#dreams-display').html('')
+    $('#user-message').html('')
   }, 5000)
 }
 
