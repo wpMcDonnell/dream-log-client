@@ -4,7 +4,6 @@ const onIndexSuccess = function (responseData) {
   $('#dreams-display').show()
   const dreams = responseData.dreams
 
-
   let dreamsHtml = ''
 
   // loop over each dream in the dreams array
@@ -41,8 +40,12 @@ const onError = function (err) {
   console.error(err)
   // if an error occurs show it on page
   // selects
-  $('#error-message').html('Something went wrong, please try again')
-  $('#form').trigger('reset')
+  $('#user-message').html('Something went wrong, please try again')
+  $('#dream-destroy').trigger('reset')
+  $('#dream-get').trigger('reset')
+  setTimeout(() => {
+    $('#user-message').html('')
+  }, 10000)
 }
 
 const onCreateSuccess = function () {
@@ -137,7 +140,6 @@ const onExitSearch = function () {
   $('#dream-destroy').hide()
   $('#exit-search-button').hide()
   $('.bi-search').show()
-
 }
 
 module.exports = {

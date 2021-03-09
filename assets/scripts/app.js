@@ -27,6 +27,8 @@ $(() => {
 
   $('#dream-get').on('submit', dreamEvents.onShowDream)
 
+  $('#dream-destroy').on('submit', dreamEvents.onDeleteDream)
+
   $('#create-account').on('click', authUi.onCreateAccount)
 
   $('#exit-sign-up').on('click', authUi.onExitSignUp)

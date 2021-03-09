@@ -82,6 +82,7 @@ transform: scale(0.9);
 #dreams-display {
   color: white;
   text-align: center;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 #dreams-index {
@@ -137,4 +138,8 @@ svg {
 
 #dream-destroy, #dream-get {
   margin-left: 1em;
+}
+
+#change-password-header, #destroy-dream-header, #get-dream-header, .form-label {
+  text-shadow: 1px 1px 4px #FFFFFF;
 }
