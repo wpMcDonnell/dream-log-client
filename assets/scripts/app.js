@@ -6,6 +6,8 @@ const dreamEvents = require('./dream/events')
 
 const authUi = require('./auth/ui')
 
+const dreamUi = require('./dream/ui')
+
 $(() => {
   $('#sign-up').on('submit', authEvents.onSignUp)
 
@@ -28,4 +30,16 @@ $(() => {
   $('#create-account').on('click', authUi.onCreateAccount)
 
   $('#exit-sign-up').on('click', authUi.onExitSignUp)
+
+  $('.create-post-button').on('click', dreamUi.onCreatePost)
+
+  $('#create-post-cancel-button').on('click', dreamUi.onCancelPost)
+
+  $('.bi-list').on('click', authUi.onMenu)
+
+  $('#exit-account-settings').on('click', authUi.onExitAccountSettings)
+
+  $('.bi-search').on('click', dreamUi.onSearch)
+
+  $('#exit-search-button').on('click', dreamUi.onExitSearch)
 })

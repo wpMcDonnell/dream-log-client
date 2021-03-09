@@ -1,4 +1,5 @@
 @import '~bootstrap/scss/bootstrap';
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 
 
@@ -49,6 +50,7 @@ html body {
   margin-top: 1em;
   color: white;
   font-style: italic;
+  text-align: center;
 }
 
 #create-account {
@@ -66,27 +68,73 @@ right: 1em;
 transform: scale(0.9);
 }
 
-.sign-in-container {
+.sign-in-container, .sign-up-container, .change-password-container {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.sign-up-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
-.scrollspy {
-  display: flex;
-  justify-content: center;
-  background-color: $indigo;
 }
 
 .create-post-div {
   display: flex;
   justify-content: center;
-  background-color: $indigo;
+}
+
+#dreams-display {
+  color: white;
+  text-align: center;
+}
+
+#dreams-index {
+  display: flex;
+  justify-content: center;
+}
+
+.nav {
+  // position: fixed;
+  // margin-top: 0px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: $purple;
+  align-items: center;
+}
+
+#menu-button-nav {
+  margin-top: 7px;
+  margin-left: 7px;
+  margin-bottom: 0px
+}
+
+#search-button-nav {
+  margin-top: 2px;
+  margin-right: 7px;
+  margin-bottom: 0px
+}
+
+svg {
+  color: white;
+}
+
+.dreams-posts {
+  margin-top: 2em;
+}
+
+#sign-out-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 5em;
+}
+
+#change-password-buttons {
+  display: flex;
+}
+
+#exit-search-button {
+  display: flex;
+  margin-top: 2em;
+  justify-content: center;
+}
+
+#dream-destroy, #dream-get {
+  margin-left: 1em;
 }

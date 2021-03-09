@@ -2,14 +2,15 @@ const store = require('./../store')
 
 $('.create-post-div').hide()
 $('#sign-out-button').hide()
-// $('#dreams-index').hide()
 $('.dreams-posts').hide()
 $('#dream-destroy').hide()
 $('#dream-get').hide()
 $('#change-password').hide()
 $('#sign-up').hide()
 $('.create-post-button').hide()
-
+$('.create-post-div').hide()
+$('.nav').hide()
+$('#exit-search-button').hide()
 
 const signUpSuccess = function (response) {
   $('#user-message').text('Sign Up Successful!!!')
@@ -26,19 +27,20 @@ const signUpFailure = function (response) {
 const signInSuccess = function (response) {
   store.user = response.user
   $('#user-message').text('Sign in successful')
-  $('.create-post-div').show()
-  $('#sign-out-button').show()
+  // $('#sign-out-button').show()
   $('.dreams-posts').show()
-  $('#dream-destroy').show()
-  $('#dream-get').show()
+  // $('#dream-destroy').show()
+  // $('#dream-get').show()
   $('#sign-in').trigger('reset')
-  $('#change-password').show()
+  // $('#change-password').show()
   $('#sign-in').hide()
   $('#create-account').hide()
   setTimeout(() => {
     $('#user-message').html('')
   }, 5000)
   $('.create-post-button').show()
+  $('.nav').show()
+  // $('.title-container').hide()
 }
 
 const signInFailure = function (response) {
@@ -61,6 +63,7 @@ const signOutSuccess = function (response) {
   $('#change-password').trigger('reset')
   $('#change-password').hide()
   $('.create-post-button').hide()
+  $('.nav').hide()
 }
 
 const signOutFailure = function (response) {
@@ -72,7 +75,6 @@ const changePasswordSuccess = function () {
   $('#user-message').text('Password changed successfully')
   $('#sign-up').trigger('reset')
   $('#change-password').trigger('reset')
-
 }
 
 const changePasswordFailure = function () {
@@ -98,6 +100,34 @@ const onExitSignUp = function () {
   $('#sign-up').trigger('reset')
 }
 
+const onMenu = function () {
+  $('.create-post-div').hide()
+  $('#dream-destroy').hide()
+  $('#dream-get').hide()
+  $('.dreams-posts').hide()
+  $('.create-post-button').hide()
+  $('.nav').hide()
+  $('#change-password').show()
+  $('#sign-out-button').show()
+  $('#exit-search-button').hide()
+}
+
+const onExitAccountSettings = function () {
+
+  $('#change-password').hide()
+  $('.nav').show()
+  // if ($('#new-game').data('clicked') === 'yes') {
+  //   $('.poke-board').show()
+  // }
+  $('#change-password').trigger('reset')
+  $('.create-post-button').show()
+  $('.dreams-posts').show()
+  // $('#dreams-index').show()
+  $('#sign-out-button').hide()
+
+
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -108,5 +138,7 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFailure,
   onCreateAccount,
-  onExitSignUp
+  onExitSignUp,
+  onMenu,
+  onExitAccountSettings
 }

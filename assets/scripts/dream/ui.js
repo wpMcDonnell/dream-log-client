@@ -25,10 +25,13 @@ const onIndexSuccess = function (responseData) {
     </form>
     `
   })
+  $('#dreams-dislay').show()
   $('#dreams-display').html(dreamsHtml)
   $('#form').trigger('reset')
   $('#exampleFormControlInput1').val('')
   $('#exampleFormControlTextarea1').val('')
+  $('#user-message').html('')
+  $('#dreams-index').hide()
 }
 
 const onError = function (err) {
@@ -40,11 +43,19 @@ const onError = function (err) {
 }
 
 const onCreateSuccess = function () {
-  $('#user-message').html('You have successfully created a dream!, dreams have changed! Click Get All dreams to see new dreams.')
+  $('#user-message').html('You have successfully created a dream! Dreams have changed! Click Get All dreams to see new dreams.')
   $('#form').trigger('reset')
   $('#exampleFormControlInput1').val('')
   $('#exampleFormControlTextarea1').val('')
   $('#change-password').trigger('reset')
+  $('.create-post-div').hide()
+  $('#dreams-index').show()
+  $('.dreams-posts').show()
+  $('#dreams-display').hide()
+  setTimeout(() => {
+    $('#user-message').html('')
+  }, 5000)
+  $('#create-post-button').show()
 }
 
 const onUpdateSuccess = function () {
@@ -80,25 +91,46 @@ const onShowSuccess = function (responseData) {
   $('#change-password').trigger('reset')
 }
 
+const onCreatePost = function () {
+  $('.create-post-div').show()
+  $('#dream-destroy').hide()
+  $('#dream-get').hide()
+  $('.dreams-posts').hide()
+  $('.create-post-button').hide()
+  $('#exit-search-button').hide()
+}
+
+const onCancelPost = function () {
+  $('.create-post-div').hide()
+  $('.dreams-posts').show()
+  $('.create-post-button').show()
+}
+
+const onSearch = function () {
+  $('#dream-get').show()
+  $('#dream-destroy').show()
+  $('.dreams-posts').hide()
+  $('#exit-search-button').show()
+}
+
+const onExitSearch = function () {
+  $('.create-post-button').show()
+  $('.dreams-posts').show()
+  $('#dream-get').hide()
+  $('#dream-destroy').hide()
+  $('#exit-search-button').hide()
+
+}
+
 module.exports = {
   onIndexSuccess,
   onError,
   onCreateSuccess,
   onUpdateSuccess,
   onShowDeletedDream,
-  onShowSuccess
+  onShowSuccess,
+  onCreatePost,
+  onCancelPost,
+  onSearch,
+  onExitSearch
 }
-
-// const onShowSuccess = function (responseData) {
-//   const dream = responseData.dream
-//   console.log(responseData)
-//
-//   const dreamsHtml = `
-//   <h4>Title: ${dream.title}</h4>
-//   <p>Author: ${dream.description}</p>
-//   <p>ID: ${dream._id}</p>
-//   `
-//
-//   $('#dreams-display').html(dreamsHtml)
-//   $('#form').trigger('reset')
-// }
