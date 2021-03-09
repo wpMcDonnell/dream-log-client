@@ -124,6 +124,7 @@ const onExitAccountSettings = function () {
   $('.dreams-posts').show()
   // $('#dreams-index').show()
   $('#sign-out-button').hide()
+  $('.bi-search').show()
 
 
 }

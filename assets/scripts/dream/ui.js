@@ -1,9 +1,9 @@
 
 const onIndexSuccess = function (responseData) {
 // extracting the dream from the response's data into a variable
+  $('#dreams-display').show()
   const dreams = responseData.dreams
 
-  console.log(dreams)
 
   let dreamsHtml = ''
 
@@ -25,7 +25,6 @@ const onIndexSuccess = function (responseData) {
     </form>
     `
   })
-  $('#dreams-dislay').show()
   $('#dreams-display').html(dreamsHtml)
   $('#form').trigger('reset')
   $('#exampleFormControlInput1').val('')
@@ -55,7 +54,8 @@ const onCreateSuccess = function () {
   setTimeout(() => {
     $('#user-message').html('')
   }, 5000)
-  $('#create-post-button').show()
+  $('.create-post-button').show()
+
 }
 
 const onUpdateSuccess = function () {
@@ -89,6 +89,13 @@ const onShowSuccess = function (responseData) {
 
   $('#dreams-display').html(dreamsHtml)
   $('#change-password').trigger('reset')
+  $('.create-post-button').show()
+  $('.dreams-posts').show()
+  $('#dream-get').hide()
+  $('#dream-destroy').hide()
+  $('#exit-search-button').hide()
+  $('#dream-get').trigger('reset')
+  $('#dreams-index').show()
 }
 
 const onCreatePost = function () {
@@ -98,6 +105,7 @@ const onCreatePost = function () {
   $('.dreams-posts').hide()
   $('.create-post-button').hide()
   $('#exit-search-button').hide()
+  $('.bi-search').show()
 }
 
 const onCancelPost = function () {
@@ -111,6 +119,8 @@ const onSearch = function () {
   $('#dream-destroy').show()
   $('.dreams-posts').hide()
   $('#exit-search-button').show()
+  $('.create-post-div').hide()
+  $('.bi-search').hide()
 }
 
 const onExitSearch = function () {
@@ -119,6 +129,7 @@ const onExitSearch = function () {
   $('#dream-get').hide()
   $('#dream-destroy').hide()
   $('#exit-search-button').hide()
+  $('.bi-search').show()
 
 }
 
