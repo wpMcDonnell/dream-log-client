@@ -5,8 +5,6 @@ const ui = require('./ui')
 const getFormFields = require('../../../lib/get-form-fields')
 
 const onIndexDreams = function () {
-  console.log('In index dreams')
-
   api.index()
     .then(ui.onIndexSuccess)
     .catch(ui.onError)

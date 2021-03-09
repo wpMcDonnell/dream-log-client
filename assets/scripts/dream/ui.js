@@ -2,13 +2,16 @@
 const onIndexSuccess = function (responseData) {
 // extracting the dream from the response's data into a variable
   $('#dreams-display').show()
-  const dreams = responseData.dreams
+  if (JSON.stringify(responseData.dreams) === '[]') {
+    $('#dreams-display').html('There are currently no dreams. Please use the purple pencil to create a dream')
+  } else {
+    const dreams = responseData.dreams
 
-  let dreamsHtml = ''
+    let dreamsHtml = ''
 
-  // loop over each dream in the dreams array
-  dreams.forEach(dream => {
-    dreamsHtml += `
+    // loop over each dream in the dreams array
+    dreams.forEach(dream => {
+      dreamsHtml += `
     <hr>
     <h4>Title: ${dream.title}</h4>
     <p>Description: ${dream.description}</p>
@@ -27,13 +30,14 @@ const onIndexSuccess = function (responseData) {
     <button>Update Dream</button>
     </form>
     `
-  })
-  $('#dreams-display').html(dreamsHtml)
-  $('#form').trigger('reset')
-  $('#exampleFormControlInput1').val('')
-  $('#exampleFormControlTextarea1').val('')
-  $('#user-message').html('')
-  $('#dreams-index').hide()
+    })
+    $('#dreams-display').html(dreamsHtml)
+    $('#form').trigger('reset')
+    $('#exampleFormControlInput1').val('')
+    $('#exampleFormControlTextarea1').val('')
+    $('#user-message').html('')
+    $('#dreams-index').hide()
+  }
 }
 
 const onError = function (err) {
