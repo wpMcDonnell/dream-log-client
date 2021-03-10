@@ -30,7 +30,6 @@ const onDynamicUpdateDream = function (event) {
 
   const formData = getFormFields(form)
   const updateButton = event.target
-  console.log()
   const id = $(updateButton).data('id')
   api.updateDream(id, formData)
 

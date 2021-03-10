@@ -61,6 +61,10 @@ const signOutSuccess = function (response) {
   $('#change-password').hide()
   $('.create-post-button').hide()
   $('.nav').hide()
+  $('#exampleFormControlInput1').val('')
+  $('#exampleFormControlTextarea1').val('')
+  $('#dream-get').trigger('reset')
+  $('#dream-destroy').trigger('reset')
 }
 
 const signOutFailure = function (response) {
@@ -107,6 +111,10 @@ const onMenu = function () {
   $('#change-password').show()
   $('#sign-out-button').show()
   $('#exit-search-button').hide()
+  $('#exampleFormControlInput1').val('')
+  $('#exampleFormControlTextarea1').val('')
+  $('#dream-get').trigger('reset')
+  $('#dream-destroy').trigger('reset')
 }
 
 const onExitAccountSettings = function () {

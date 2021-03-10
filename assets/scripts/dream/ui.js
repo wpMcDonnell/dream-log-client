@@ -4,6 +4,7 @@ const onIndexSuccess = function (responseData) {
   $('#dreams-display').show()
   if (JSON.stringify(responseData.dreams) === '[]') {
     $('#dreams-display').html('There are currently no dreams. Please use the purple pencil to create a dream')
+    $('#dreams-index').hide()
   } else {
     const dreams = responseData.dreams
 
@@ -54,7 +55,6 @@ const onError = function (err) {
 
 const onCreateSuccess = function () {
   $('#user-message').html('You have successfully created a dream! Dreams have changed! Click Get All dreams to see new dreams.')
-  $('#form').trigger('reset')
   $('#exampleFormControlInput1').val('')
   $('#exampleFormControlTextarea1').val('')
   $('#change-password').trigger('reset')
@@ -85,6 +85,12 @@ const onShowDeletedDream = function () {
   $('#dreams-display').html('Dream was deleted')
   $('#dreams-index').show()
   $('#change-password').trigger('reset')
+  $('#dream-get').hide()
+  $('#dream-destroy').hide()
+  $('.bi-search').show()
+  $('#dream-get').trigger('reset')
+  $('#dream-destroy').trigger('reset')
+  $('#exit-search-button').hide()
 
   setTimeout(() => {
     $('#user-message').html('')
@@ -110,6 +116,8 @@ const onShowSuccess = function (responseData) {
   $('#exit-search-button').hide()
   $('#dream-get').trigger('reset')
   $('#dreams-index').show()
+  $('.bi-search').show()
+  $('#dream-destroy').trigger('reset')
 }
 
 const onCreatePost = function () {
@@ -120,12 +128,16 @@ const onCreatePost = function () {
   $('.create-post-button').hide()
   $('#exit-search-button').hide()
   $('.bi-search').show()
+  $('#dream-get').trigger('reset')
+  $('#dream-destroy').trigger('reset')
 }
 
 const onCancelPost = function () {
   $('.create-post-div').hide()
   $('.dreams-posts').show()
   $('.create-post-button').show()
+  $('#exampleFormControlInput1').val('')
+  $('#exampleFormControlTextarea1').val('')
 }
 
 const onSearch = function () {
@@ -135,6 +147,8 @@ const onSearch = function () {
   $('#exit-search-button').show()
   $('.create-post-div').hide()
   $('.bi-search').hide()
+  $('#exampleFormControlInput1').val('')
+  $('#exampleFormControlTextarea1').val('')
 }
 
 const onExitSearch = function () {
@@ -144,6 +158,8 @@ const onExitSearch = function () {
   $('#dream-destroy').hide()
   $('#exit-search-button').hide()
   $('.bi-search').show()
+  $('#dream-get').trigger('reset')
+  $('#dream-destroy').trigger('reset')
 }
 
 module.exports = {
