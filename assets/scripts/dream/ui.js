@@ -99,7 +99,6 @@ const onShowDeletedDream = function () {
 
 const onShowSuccess = function (responseData) {
   const dream = responseData.dream
-  console.log(responseData)
 
   const dreamsHtml = `
   <h4>Title: ${dream.title}</h4>

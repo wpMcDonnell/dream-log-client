@@ -67,7 +67,6 @@ const onShowDream = function (event) {
   const form = event.target
 
   const formData = getFormFields(form)
-  console.log('formData is', formData)
 
   api.show(formData.dream.id)
     .then(ui.onShowSuccess)
