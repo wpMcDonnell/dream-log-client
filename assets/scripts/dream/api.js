@@ -23,7 +23,6 @@ const show = function (id) {
 }
 
 const removeDream = function (id) {
-  console.log(id)
   return $.ajax({
     method: 'DELETE',
     headers: {
@@ -35,7 +34,6 @@ const removeDream = function (id) {
 
 //  update a single dream, using formData, by its id
 const updateDream = function (id, formData) {
-  console.log(formData)
   return $.ajax({
     method: 'PATCH',
     headers: {
