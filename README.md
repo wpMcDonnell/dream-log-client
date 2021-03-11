@@ -6,6 +6,10 @@ This project represents basic user functionality for a website that communicates
 
 I sought out to create a dream-log app where users could CRUD and view other user's posts. Users may only delete and edit their own posts.
 
+## Links
+- [API Back-End Repo](https://github.com/wpMcDonnell/dream-log)
+- [Deployed API URL](https://mysterious-forest-15035.herokuapp.com)
+- [Deployed Client Site](https://wpmcdonnell.github.io/dream-log-client/)
 
 ## Planning
 First I created a wireframe and users stories to physically conceputalize how I wanted the app and layout to look. I also created a ERD to conceptualize how the app would talk to the API. I then proceeded on coding out the basic auth and dream forms.
