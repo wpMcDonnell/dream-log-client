@@ -122,19 +122,22 @@
       </div>
       <div class="mb-3">
         <label for="exampleFormControlTextarea1" class="form-label">DESCRIPTION</label>
-        <textarea type="text" name=dream[description] class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        <button class="btn btn-light"> Log Dream </button> <button class="btn btn-light" type="button" id='create-post-cancel-button'>Cancel</button>
+        <textarea type="text" name=dream[description] class="form-control mb-2" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <button class="btn btn-light"> Log Dream
+        <br>
+        </button> <button class="btn btn-light" type="button" id='create-post-cancel-button'>Cancel</button>
       </div>
     </form>
 
   </div>
 
+  <div class="col-6 mx-auto">
   <form id='dream-get'>
-    <h3 id='get-dream-header'> Get by ID</h3>
+    <h3 id='get-dream-header' class='mx-auto'> Get by ID</h3>
     <br>
-    <input type='text' name='dream[id]' placeholder='Enter id here' required>
+    <input class='form-control' type='text' name='dream[id]' placeholder='Enter id here' required>
     <br>
-    <button class="btn btn-light">Get</button>
+    <button class="btn btn-light mb-2">Get</button>
   </form>
 
   <br>
@@ -142,10 +145,11 @@
   <form id='dream-destroy'>
     <h3 id='destroy-dream-header'> Destroy Dream by ID</h3>
     <br>
-    <input type='text' name='dream[id]' placeholder='Enter id here' required>
+    <input class='form-control' type='text' name='dream[id]' placeholder='Enter id here' required>
     <br>
     <button class="btn btn-light">Destroy</button>
   </form>
+  </div>
 
   <div id='exit-search-button'>
     <button class="btn btn-light">Back</button>
@@ -157,20 +161,20 @@
     <h3 id='change-password-header'> CHANGE <br>PASSWORD </h3>
     <br>
 
-    <input type='password' name='passwords[old]' placeholder='Enter Old Password' required>
+    <input class='form-control' type='password' name='passwords[old]' placeholder='Enter Old Password' required>
     <br>
-    <input type='password' name='passwords[new]' placeholder='Enter New Password' required>
+    <input class='form-control' type='password' name='passwords[new]' placeholder='Enter New Password' required>
     <br>
 
     <div id='change-password-buttons'>
-    <button class="btn btn-light">Change Password</button>
+    <button class="btn btn-light mb-2">Change Password</button>
     <button class="btn btn-light" id='exit-account-settings' type='button'>Back</button>
   </div>
   </form>
 </div>
 
 <div id='sign-out-button'>
-  <button id='sign-out'>Sign Out</button>
+  <button class="btn btn-light" id='sign-out'>Sign Out</button>
 </div>
 
 

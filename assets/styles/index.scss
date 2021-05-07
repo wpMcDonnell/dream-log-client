@@ -130,6 +130,7 @@ svg {
 
 #change-password-buttons {
   display: flex;
+  flex-direction: column;
 }
 
 #exit-search-button {

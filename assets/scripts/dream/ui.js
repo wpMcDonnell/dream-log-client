@@ -24,11 +24,13 @@ const onIndexSuccess = function (responseData) {
     <br>
     <br>
     <p> Enter Edits Below ... <p>
+    <div class="col-4 mx-auto">
     <form class='dream-update-dynamic' data-id=${dream._id}>
     <input class='form-control mb-2' type='text' name='dream[title]' placeholder='Enter Title Here' required>
     <input class='form-control mb-2' type='text' name='dream[description]' placeholder='Enter Description Here' required>
     <button class="btn btn-light">Update Dream</button>
     </form>
+    </div>
     `
     })
     $('#dreams-display').html(dreamsHtml)
