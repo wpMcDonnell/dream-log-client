@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Dream Log</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+
+<div class='nav'>
+  <div id='menu-button-nav'>
+  <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-list" viewBox="0 0 20 20">
+    <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+  </svg>
+</div>
+<div id='search-button-nav'>
+<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-search" viewBox="0 0 20 20">
+  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+</svg>
+</div>
+</div>
+
+
+
+  <div class='title-container'>
+    <h1>Dream Log</h1>
+  </div>
+
+  <div class='sign-in-container'>
+    <form id='sign-in'>
+      <h5 id='sign-in-header'> SIGN IN</h5>
+      <div id='account-icon'>
+        <img src="public/accountCircle.png" alt="Sign In">
+      </div>
+      <br>
+      <input class='form-control' type='email' name='credentials[email]' placeholder='Enter Email Here' required>
+      <br>
+      <input class='form-control' type='password' name='credentials[password]' placeholder='Enter Password Here' required>
+      <br>
+
+      <div id='sign-in-button'>
+        <button class="btn btn-light">Sign In</button>
+      </div>
+    </form>
+
+  </div>
+
+
+
+
+
+
+  <div id='create-account'>
+    <button class="btn btn-light">Create Account</button>
+  </div>
+
+  <div class='sign-up-container'>
+    <form id='sign-up'>
+
+      <h5 id='sign-up-header'> SIGN UP</h5>
+      <br>
+      <input class='form-control' type='email' name='credentials[email]' placeholder='Enter Email Here' required>
+      <br>
+      <input class='form-control' type='password' name='credentials[password]' placeholder='Enter Password Here' required>
+      <br>
+      <input class='form-control' type='password' name='credentials[password_confirmation]' placeholder='Enter Password Again' required>
+      <br>
+
+
+      <div id=sign-up-buttons>
+        <button class="btn btn-light"> Sign Up </button>
+        <br>
+        <button id='exit-sign-up' class="btn btn-light" type='button'>Back</button>
+      </div>
+
+    </form>
+  </div>
+
+  <div id="user-message"></div>
+
+
+
+
+
+
+
+
+
+  <section class='dreams-posts'>
+    <div id='dreams-index'>
+      <button class="btn btn-light">Get All Dreams</button>
+    </div>
+    <div id='dreams-display'></div>
+  </section>
+
+  <div class='create-post-button'>
+    <img src='public/create_post.png' alt='Create Post'>
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <div class='create-post-div'>
+    <form id='create-post'>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">DREAM TITLE</label>
+        <input type="text" name=dream[title] class="form-control" id="exampleFormControlInput1" placeholder="Dream Title">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">DESCRIPTION</label>
+        <textarea type="text" name=dream[description] class="form-control mb-2" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <button class="btn btn-light"> Log Dream
+        <br>
+        </button> <button class="btn btn-light" type="button" id='create-post-cancel-button'>Cancel</button>
+      </div>
+    </form>
+
+  </div>
+
+  <div class="col-6 mx-auto">
+  <form id='dream-get'>
+    <h3 id='get-dream-header' class='mx-auto'> Get by ID</h3>
+    <br>
+    <input class='form-control' type='text' name='dream[id]' placeholder='Enter id here' required>
+    <br>
+    <button class="btn btn-light mb-2">Get</button>
+  </form>
+
+  <br>
+
+  <form id='dream-destroy'>
+    <h3 id='destroy-dream-header'> Destroy Dream by ID</h3>
+    <br>
+    <input class='form-control' type='text' name='dream[id]' placeholder='Enter id here' required>
+    <br>
+    <button class="btn btn-light">Destroy</button>
+  </form>
+  </div>
+
+  <div id='exit-search-button'>
+    <button class="btn btn-light">Back</button>
+  </div>
+
+  <br>
+  <div class='change-password-container'>
+  <form id='change-password'>
+    <h3 id='change-password-header'> CHANGE <br>PASSWORD </h3>
+    <br>
+
+    <input class='form-control' type='password' name='passwords[old]' placeholder='Enter Old Password' required>
+    <br>
+    <input class='form-control' type='password' name='passwords[new]' placeholder='Enter New Password' required>
+    <br>
+
+    <div id='change-password-buttons'>
+    <button class="btn btn-light mb-2">Change Password</button>
+    <button class="btn btn-light" id='exit-account-settings' type='button'>Back</button>
+  </div>
+  </form>
+</div>
+
+<div id='sign-out-button'>
+  <button class="btn btn-light" id='sign-out'>Sign Out</button>
+</div>
+
+
+</body>
+
+</html>
