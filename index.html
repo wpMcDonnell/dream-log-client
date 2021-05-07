@@ -40,13 +40,14 @@
       <div id='account-icon'>
         <img src="public/accountCircle.png" alt="Sign In">
       </div>
-      <input type='email' name='credentials[email]' placeholder='Enter Email Here' required>
       <br>
-      <input type='password' name='credentials[password]' placeholder='Enter Password Here' required>
+      <input class='form-control' type='email' name='credentials[email]' placeholder='Enter Email Here' required>
+      <br>
+      <input class='form-control' type='password' name='credentials[password]' placeholder='Enter Password Here' required>
       <br>
 
       <div id='sign-in-button'>
-        <button>Sign In</button>
+        <button class="btn btn-light">Sign In</button>
       </div>
     </form>
 
@@ -58,7 +59,7 @@
 
 
   <div id='create-account'>
-    <button>Create Account</button>
+    <button class="btn btn-light">Create Account</button>
   </div>
 
   <div class='sign-up-container'>
@@ -66,16 +67,18 @@
 
       <h5 id='sign-up-header'> SIGN UP</h5>
       <br>
-      <input type='email' name='credentials[email]' placeholder='Enter Email Here' required>
+      <input class='form-control' type='email' name='credentials[email]' placeholder='Enter Email Here' required>
       <br>
-      <input type='password' name='credentials[password]' placeholder='Enter Password Here' required>
+      <input class='form-control' type='password' name='credentials[password]' placeholder='Enter Password Here' required>
       <br>
-      <input type='password' name='credentials[password_confirmation]' placeholder='Enter Password Again' required>
+      <input class='form-control' type='password' name='credentials[password_confirmation]' placeholder='Enter Password Again' required>
       <br>
 
 
       <div id=sign-up-buttons>
-        <button> Sign Up </button> <button id='exit-sign-up' type='button'>Back</button>
+        <button class="btn btn-light"> Sign Up </button>
+        <br>
+        <button id='exit-sign-up' class="btn btn-light" type='button'>Back</button>
       </div>
 
     </form>
@@ -93,7 +96,7 @@
 
   <section class='dreams-posts'>
     <div id='dreams-index'>
-      <button>Get All Dreams</button>
+      <button class="btn btn-light">Get All Dreams</button>
     </div>
     <div id='dreams-display'></div>
   </section>
@@ -120,7 +123,7 @@
       <div class="mb-3">
         <label for="exampleFormControlTextarea1" class="form-label">DESCRIPTION</label>
         <textarea type="text" name=dream[description] class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        <button> Log Dream </button> <button type="button" id='create-post-cancel-button'>Cancel</button>
+        <button class="btn btn-light"> Log Dream </button> <button class="btn btn-light" type="button" id='create-post-cancel-button'>Cancel</button>
       </div>
     </form>
 
@@ -131,7 +134,7 @@
     <br>
     <input type='text' name='dream[id]' placeholder='Enter id here' required>
     <br>
-    <button>Get</button>
+    <button class="btn btn-light">Get</button>
   </form>
 
   <br>
@@ -141,11 +144,11 @@
     <br>
     <input type='text' name='dream[id]' placeholder='Enter id here' required>
     <br>
-    <button>Destroy</button>
+    <button class="btn btn-light">Destroy</button>
   </form>
 
   <div id='exit-search-button'>
-    <button>Back</button>
+    <button class="btn btn-light">Back</button>
   </div>
 
   <br>
@@ -160,7 +163,8 @@
     <br>
 
     <div id='change-password-buttons'>
-    <button>Change Password</button><button id='exit-account-settings' type='button'>Back</button>
+    <button class="btn btn-light">Change Password</button>
+    <button class="btn btn-light" id='exit-account-settings' type='button'>Back</button>
   </div>
   </form>
 </div>

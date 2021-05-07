@@ -16,19 +16,18 @@ const onIndexSuccess = function (responseData) {
     <hr>
     <h4>Title: ${dream.title}</h4>
     <p>Description: ${dream.description}</p>
-    <p>ID: ${dream._id}</p>
     <p>User: ${dream.owner}</p>
     <p>entry: ${dream.updatedAt}</p>
-    <button class='dream-destroy-dynamic' data-id=${dream._id}>
+    <button class="btn btn-light" class='dream-destroy-dynamic' data-id=${dream._id}>
       Destroy Dream
     </button>
     <br>
     <br>
     <p> Enter Edits Below ... <p>
     <form class='dream-update-dynamic' data-id=${dream._id}>
-    <input type='text' name='dream[title]' placeholder='Enter Title Here' required>
-    <input type='text' name='dream[description]' placeholder='Enter Description Here' required>
-    <button>Update Dream</button>
+    <input class='form-control mb-2' type='text' name='dream[title]' placeholder='Enter Title Here' required>
+    <input class='form-control mb-2' type='text' name='dream[description]' placeholder='Enter Description Here' required>
+    <button class="btn btn-light">Update Dream</button>
     </form>
     `
     })
